@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QA Test task page</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+    }
+    h1 {
+      text-align: center;
+    }
+    .body-wrapper {
+      width: 430px;
+      margin: 0 auto;
+    }
+    .rules-block li {
+      margin-bottom: 5px;
+    }
+    .tah-item {
+      width: 430px;
+      margin: 0 auto 25px;
+      height: 115px;
+      position: relative;
+      padding: 16px;
+      background: #fff;
+
+      overflow: hidden;
+      cursor: text;
+      border: 1px solid #b5b5b5;
+    }
+    .tah-placeholder {
+      margin-bottom: 10px;
+    }
+    .tah-word-invalid {
+      color: #FF5A57;
+      font-weight: bold;
+    }
+    .tah-word-valid {
+      color: #02ED86;
+    }
+
+    .success-message {
+      display: none;
+    }
+    .textarea-wrapper[state="done"] .success-message {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="body-wrapper">
+  <h1>QA Test task page</h1>
+  <div class="rules-block">
+    <h4>Rules:</h4>
+    <ul>
+      <li>Non case sensitive comparing</li>
+      <li>Punctuation marks should be at their places</li>
+      <li>Triggers for update of the state: Backspace pressed, Space pressed, Typed the same or more letters of written and required word, blur/focus of the textarea</li>
+    </ul>
+  </div>
+
+  <div class="textarea-wrapper">
+    <textarea name="textarea-item" id="textarea-item" cols="30" rows="10"></textarea>
+
+    <div class="success-message">The textarea has passed.</div>
+  </div>
+</div>
+
+<script>
+  window.TEXT_TO_VALIDATE = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim harum minima praesentium quaerat quod.';
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./libs/tah.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
